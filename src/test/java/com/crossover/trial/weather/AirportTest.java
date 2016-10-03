@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 /**
  * Base class for DAO testing
  */
-public class AirportDaoImplTest {
+public class AirportTest {
 
     @Resource
     private AirportDao airportDao;

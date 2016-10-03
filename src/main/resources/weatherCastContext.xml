@@ -14,5 +14,5 @@
     <bean id="airportDao" class="com.crossover.trial.weather.services.HazelcastAirportDaoImpl"/>
 
     <hz:hazelcast id="instance"/>
-
+	
 </beans>

@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
  * It's a test for AWS cluster. When several nodes are started Hazelcast automatically former a cluster and starts to
  * replicate data between nodes. In case of a node crush data won't be lost!
  */
-public class WeatherClusterIntegrationTest {
+public class WeatherCITest {
 
     private static WeatherServer[] servers = new WeatherServer[2];
     private Client client = ClientBuilder.newClient();

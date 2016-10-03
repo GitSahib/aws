@@ -20,8 +20,8 @@ import static org.junit.Assert.assertTrue;
  * Performance service tests
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/simpleContext.xml")
-public class SimplePerformanceDaoImplTest {
+@ContextConfiguration(locations = "/beansContext.xml")
+public class SimplePerformanceTest {
 
     @Resource
     private PerformanceDao dao;

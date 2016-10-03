@@ -1,14 +1,17 @@
 package com.crossover.trial.weather.services;
 
-import com.crossover.trial.weather.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import com.crossover.trial.weather.models.Airport;
 import com.crossover.trial.weather.models.Atmosphereinfo;
 import com.crossover.trial.weather.models.DataPoint;
 import com.crossover.trial.weather.models.DataPointType;
-
-import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * General implementation of the DAO that can be used for any key-value storage.

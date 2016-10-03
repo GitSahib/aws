@@ -19,18 +19,18 @@ import static org.junit.Assert.*;
  * Airport endpoint tests
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/simpleContext.xml")
-public class AirportEndpointTest {
+@ContextConfiguration(locations = "/beansContext.xml")
+public class AirportEPTest {
 
     @Resource
     private WeatherCollectorEndpoint endpoint;
 
     @Before
     public void setUp() {
-        Storage.AIRPORT_DATA.clear();
-        Storage.ATMOSPHERIC_INFORMATION.clear();
-        Storage.REQUEST_FREQUENCY.clear();
-        Storage.RADIUS_FREQUENCY.clear();
+        Storage.getAIRPORT_DATA().clear();
+        Storage.getATMOSPHERIC_INFORMATION().clear();
+        Storage.getREQUEST_FREQUENCY().clear();
+        Storage.getRADIUS_FREQUENCY().clear();
 
         endpoint.addAirport("BOS", "42.364347", "-71.005181");
         endpoint.addAirport("EWR", "40.6925", "-74.168667");

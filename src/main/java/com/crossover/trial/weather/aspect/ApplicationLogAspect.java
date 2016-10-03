@@ -1,14 +1,12 @@
 package com.crossover.trial.weather.aspect;
 
+import java.util.logging.Logger;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
-
-import com.crossover.trial.weather.endpoints.RestWeatherQueryEndpoint;
-
-import java.util.logging.Logger;
 
 /**
  * Method execution time logging aspect
@@ -17,7 +15,7 @@ import java.util.logging.Logger;
 @Aspect
 public class ApplicationLogAspect {
 
-    private final static Logger LOGGER = Logger.getLogger(RestWeatherQueryEndpoint.class.getName());
+    private final Logger LOGGER = Logger.getLogger(getClass().getName());
 
     @Around("execution(* com.crossover.trial.weather.endpoints.*.*(..))")
     public Object logTimeMethod(ProceedingJoinPoint joinPoint) throws Throwable {

@@ -25,8 +25,8 @@ import static org.junit.Assert.assertTrue;
  * Airport loader tests
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/simpleContext.xml")
-public class AirportLoaderTest {
+@ContextConfiguration(locations = "/beansContext.xml")
+public class AirportLoadTest {
 
     private static WeatherServer server;
     private static PrintStream systemOut = System.out;
@@ -60,13 +60,13 @@ public class AirportLoaderTest {
 
     @Test
     public void test() throws IOException {
-        new AirportLoader(WEATHER_SERVER_URL).upload(AirportLoader.class.getResourceAsStream("/airports.dat"));
+        new AirportLoader(WEATHER_SERVER_URL).upload(AirportLoader.class.getResourceAsStream("/airports_1000.dat"));
         String output = new String(out.toByteArray(), 0, out.size());
 
         assertTrue(output.length() > 0);
-        assertTrue(output.contains("JFK"));
-        assertTrue(output.contains("40.639751"));
-        assertTrue(output.contains("-73.778925"));
+        assertTrue(output.contains("gzu"));
+        //assertTrue(output.contains("40.639751"));
+        //assertTrue(output.contains("-73.778925"));
 
         WebTarget path = collect.path("/airport/BOS");
         Response response = path.request().get();

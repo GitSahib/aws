@@ -24,8 +24,8 @@ import static org.junit.Assert.assertEquals;
  * Weather endpoint tests
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/simpleContext.xml")
-public class WeatherEndpointTest {
+@ContextConfiguration(locations = "/beansContext.xml")
+public class WeatherEPTest {
 
     @Resource
     private WeatherQueryEndpoint _query;
@@ -34,10 +34,10 @@ public class WeatherEndpointTest {
 
     @Before
     public void setUp() throws Exception {
-        Storage.AIRPORT_DATA.clear();
-        Storage.ATMOSPHERIC_INFORMATION.clear();
-        Storage.REQUEST_FREQUENCY.clear();
-        Storage.RADIUS_FREQUENCY.clear();
+        Storage.getAIRPORT_DATA().clear();
+        Storage.getATMOSPHERIC_INFORMATION().clear();
+        Storage.getREQUEST_FREQUENCY().clear();
+        Storage.getRADIUS_FREQUENCY().clear();
 
         _update.addAirport("BOS", "42.364347", "-71.005181");
         _update.addAirport("EWR", "40.6925", "-74.168667");

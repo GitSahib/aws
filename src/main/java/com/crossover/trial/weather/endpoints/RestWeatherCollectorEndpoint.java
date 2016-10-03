@@ -4,6 +4,8 @@ import com.crossover.trial.weather.models.Airport;
 import com.crossover.trial.weather.models.DataPoint;
 import com.crossover.trial.weather.services.AirportDao;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -22,8 +24,8 @@ import java.util.logging.Logger;
 public class RestWeatherCollectorEndpoint implements WeatherCollectorEndpoint {
 
     private final static Logger LOGGER = Logger.getLogger(RestWeatherCollectorEndpoint.class.getName());
-
-    @Resource
+    
+    @Autowired
     private AirportDao airportDao;
 
     @Override

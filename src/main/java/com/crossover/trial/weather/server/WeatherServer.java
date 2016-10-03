@@ -8,6 +8,7 @@ import org.glassfish.jersey.servlet.ServletContainer;
 
 import javax.servlet.ServletRegistration;
 import java.io.IOException;
+import java.util.EventListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,7 +21,10 @@ import java.util.logging.Logger;
  */
 public class WeatherServer {
 
-    private static HttpServer server;
+    private static final String CONTEXT_LOADER_LISTENER = "org.springframework.web.context.ContextLoaderListener";
+    private static final String REQUEST_CONTEXT_LISTENER = "org.springframework.web.context.request.RequestContextListener";
+
+	private static HttpServer server;
 
     private int port = -1;
     private boolean production = false;
@@ -57,9 +61,9 @@ public class WeatherServer {
             server.addListener(listener);
 
             WebappContext ctx = new WebappContext("ctx", "/");
-            ctx.addContextInitParameter("contextConfigLocation", production ? "classpath:/hazelcastContext.xml" : "classpath:/simpleContext.xml");
-            ctx.addListener("org.springframework.web.context.ContextLoaderListener");
-            ctx.addListener("org.springframework.web.context.request.RequestContextListener");
+            ctx.addContextInitParameter("contextConfigLocation", production ? "classpath:/weatherCastContext.xml" : "classpath:/beansContext.xml");
+            ctx.addListener(CONTEXT_LOADER_LISTENER);
+            ctx.addListener(REQUEST_CONTEXT_LISTENER);
 
             final ServletRegistration reg = ctx.addServlet("spring", new ServletContainer());
             reg.addMapping("/*");

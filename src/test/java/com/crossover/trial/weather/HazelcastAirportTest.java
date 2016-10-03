@@ -9,8 +9,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Tests for an implementation of DAO using Hazelcast framework
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/hazelcastContext.xml")
-public class HazelcastAirportDaoImplTest extends AirportDaoImplTest {
+@ContextConfiguration(locations = "/weatherCastContext.xml")
+public class HazelcastAirportTest extends AirportTest {
 
     @Test
     public void testFindAirportData() {

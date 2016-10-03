@@ -16,12 +16,12 @@ public class SimpleAirportDaoImpl extends AirportDaoImpl {
 
     @Override
     protected Map<String, Airport> getAirportDataStorage() {
-        return Storage.AIRPORT_DATA;
+        return Storage.getAIRPORT_DATA();
     }
 
     @Override
     protected Map<String, Atmosphereinfo> getAtmosphericInformationDataStorage() {
-        return Storage.ATMOSPHERIC_INFORMATION;
+        return Storage.getATMOSPHERIC_INFORMATION();
     }
 
 }

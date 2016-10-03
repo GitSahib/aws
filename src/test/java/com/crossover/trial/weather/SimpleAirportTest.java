@@ -9,8 +9,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Simple airport DAO tests
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "/simpleContext.xml")
-public class SimpleAirportDaoImplTest extends AirportDaoImplTest {
+@ContextConfiguration(locations = "/beansContext.xml")
+public class SimpleAirportTest extends AirportTest {
 
     @Test
     public void testFindAirportData() {
