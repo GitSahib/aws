@@ -26,7 +26,7 @@ public class WeatherServer {
 
 	private static HttpServer server;
 
-    private int port = -1;
+    private int port = 9090;
     private boolean production = false;
 
     public WeatherServer() {}
@@ -40,7 +40,7 @@ public class WeatherServer {
         String port = System.getProperty("port");
         if(port != null) {
             try {
-                server.port = Integer.valueOf(port);
+                //server.port = Integer.valueOf(port);
             }
             catch(NumberFormatException ignore) {}
         }

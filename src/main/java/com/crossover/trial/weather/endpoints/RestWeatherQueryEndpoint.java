@@ -33,7 +33,8 @@ public class RestWeatherQueryEndpoint implements WeatherQueryEndpoint {
 
     @Override
     public String ping() {
-        RequestFrequencyData data = performanceDao.getPerformanceData();
+        @SuppressWarnings("deprecation")
+		RequestFrequencyData data = performanceDao.getPerformanceData();
 
         Map<String, Object> result = new HashMap<>();
         result.put("datasize", data.getDataSize());
